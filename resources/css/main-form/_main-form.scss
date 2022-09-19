@@ -1,0 +1,54 @@
+.main-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 5%;
+    font-size: 1.5rem;
+    &__form {
+        max-width: $max-width;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+    &__input-link-label, &__input-link, &__submit {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    &__input-link-label {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
+        width: 80%;
+    }
+    &__input-link {
+        min-height: 30px;
+        width: 100%;
+        box-shadow: $box-shadow;
+        &:focus-visible {
+            outline: none;
+            box-shadow: $box-shadow-active;
+        }
+    }
+    &__submit {
+        font-size: 1.2rem;
+        min-height: 36px;
+        width: 20%;
+        min-width: 200px;
+        cursor: pointer;
+        background-color: #FFF;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+        &:hover {
+            box-shadow: $box-shadow-active;
+        }
+    }
+
+    input[type=url] {
+        padding-left: 10px;
+    }
+}

@@ -1,0 +1,10 @@
+.info-bar {
+    width: 100%;
+    max-width: $max-width;
+
+    .alert {
+        &__danger {
+            color: $color-danger;
+        }
+    }
+}

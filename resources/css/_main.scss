@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'Unibase Fonts';
+    src: url(../fonts/UnibaseFonts.ttf);
+}
+
+html, body {
+    height: 99%;
+
+    font-family: "Unibase Fonts", sans-serif;
+    font-size: 18px;
+}
+
+body > footer {
+    position: sticky;
+    top: 99vh;
+}
+
+body > main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    & > .content {
+        max-width: $max-width;
+        width: 100%;
+    }
+}
+
+input[type=submit] {
+    font-family: "Unibase Fonts", sans-serif;
+}
+
+input[type=text] {
+    font-family: "Unibase Fonts", sans-serif;
+}
+
+
+input[type=url]::placeholder {
+    font-family: "Unibase Fonts", sans-serif;
+}

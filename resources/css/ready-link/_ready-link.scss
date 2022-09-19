@@ -1,0 +1,16 @@
+.ready-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 70px;
+    &__inner {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        flex-wrap: wrap;
+    }
+    &__label-wrapper {
+        padding-right: 10px;
+    }
+}
