@@ -31,15 +31,59 @@ body > main {
     }
 }
 
-input[type=submit] {
+h2 {
+    font-weight: 400;
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    text-decoration: none;
+    &:visited {
+        color: $dark;
+    }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill::first-line,
+input {
     font-family: "Unibase Fonts", sans-serif;
 }
 
-input[type=text] {
-    font-family: "Unibase Fonts", sans-serif;
-}
-
-
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill::first-line,
 input[type=url]::placeholder {
     font-family: "Unibase Fonts", sans-serif;
+}
+
+input[type=submit] {
+    cursor: pointer;
+}
+
+.input {
+    font-size: 1.2rem;
+    min-height: 36px;
+    background-color: #FFF;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    &:hover {
+        box-shadow: $box-shadow-active;
+    }
+}
+
+.text-align {
+    &_center {
+        text-align: center;
+    }
+    &_right {
+        text-align: right;
+    }
+    &_left {
+        text-align: left;
+    }
 }

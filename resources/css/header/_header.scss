@@ -22,5 +22,15 @@
 
     &__h2 {
         font-weight: 400;
+        display: block;
+        font-size: 1.5em;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        text-decoration: none;
+        &:visited {
+            color: $dark;
+        }
     }
 }

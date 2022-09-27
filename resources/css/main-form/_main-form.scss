@@ -35,17 +35,10 @@
         }
     }
     &__submit {
-        font-size: 1.2rem;
         min-height: 36px;
         width: 20%;
         min-width: 200px;
         cursor: pointer;
-        background-color: #FFF;
-        border-radius: $border-radius;
-        box-shadow: $box-shadow;
-        &:hover {
-            box-shadow: $box-shadow-active;
-        }
     }
 
     input[type=url] {
