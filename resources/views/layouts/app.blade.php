@@ -6,8 +6,8 @@
 
     <title>Shorter</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="{{ Vite::asset('resources/img/shorter_logo.svg') }}">
-    @vite(['resources/css/app.scss'])
+    <link rel="icon" href="{{ asset('img/shorter_logo.svg') }}">
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
 <body>
 <x-header></x-header>
@@ -20,6 +20,6 @@
     </section>
 </main>
 <x-footer></x-footer>
-@vite(['resources/js/app.js'])
+<script src="{{ mix('js/app.js') }}" defer></script>
 </body>
 </html>

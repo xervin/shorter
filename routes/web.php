@@ -17,13 +17,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [\App\Http\Controllers\IndexController::class, 'index'])->name('index');
+Route::get('/test', function () {
+    return view('test');
+});
 
 Route::post('/link/set', [LinkController::class, 'set'])
     ->name('form.set-link');
-
-Route::get('/test', function () {
-    return 'asd';
-});
 
 require __DIR__.'/auth.php';
 
