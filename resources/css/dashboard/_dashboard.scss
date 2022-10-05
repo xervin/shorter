@@ -1,0 +1,15 @@
+.dashboard {
+    &__title {
+        text-align: center;
+    }
+    &__menu {
+        display: flex;
+        justify-content: center;
+    }
+    &__list {
+        max-width: 400px;
+    }
+    &__list-item {
+        padding-bottom: 10px;
+    }
+}

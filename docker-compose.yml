@@ -1,7 +1,7 @@
 version: "3.7"
 
 services:
-  app:
+  short:
     build:
       args:
         user: webuser
@@ -52,6 +52,16 @@ services:
     container_name: short-redis
     ports:
       - "6382:6379"
+    networks:
+      - short_net
+
+  memcached:
+    container_name: short-memcached
+    image: memcached
+    ports:
+        - "11211"
+    volumes:
+      - ./:/var/www
     networks:
       - short_net
 

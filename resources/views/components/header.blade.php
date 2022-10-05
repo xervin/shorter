@@ -16,7 +16,7 @@
                     </div>
                 @else
                     <div class="header__menu">
-                        <a href="{{ route('logout') }}" class="link">Меню</a>
+                        <a href="{{ route('pages.dashboard') }}" class="link">Меню</a>
                     </div>
                     <div class="header__logout">
                         <a href="{{ route('logout') }}" class="link">Выход</a>

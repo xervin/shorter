@@ -17,14 +17,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [\App\Http\Controllers\IndexController::class, 'index'])->name('index');
-Route::get('/test', function () {
-    return view('test');
-});
 
 Route::post('/link/set', [LinkController::class, 'set'])
     ->name('form.set-link');
 
 require __DIR__.'/auth.php';
+
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('pages.dashboard');
+
+    Route::get('/user', function () {
+        return view('user');
+    })->name('pages.user');
+});
 
 // должно быть последним
 Route::get('/{token}', [LinkController::class, 'redirect'])

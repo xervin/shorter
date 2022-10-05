@@ -13,13 +13,21 @@ RUN apt-get update && apt-get install -y \
     libonig-dev \
     libxml2-dev \
     zip \
-    unzip
+    unzip \
+    libz-dev  \
+    libmemcached-dev \
+    htop \
+    nano \
+    cron
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install PHP extensions
 RUN docker-php-ext-install pdo_mysql mysqli mbstring exif pcntl bcmath gd
+
+RUN pecl install memcached
+RUN echo extension=memcached.so >> /usr/local/etc/php/conf.d/memcached.ini
 
 # Get latest Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer

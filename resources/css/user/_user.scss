@@ -1,0 +1,21 @@
+.user {
+    &__title {
+        text-align: center;
+    }
+    &__menu {
+        display: flex;
+        justify-content: center;
+    }
+    &__row {
+        display: flex;
+        padding-bottom: 10px;
+    }
+    &__label {
+        width: 30%;
+        color: $grey;
+        font-weight: 600;
+    }
+    &__field {
+        width: 70%;
+    }
+}
