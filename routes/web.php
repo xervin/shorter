@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LinkController;
+use App\Http\Controllers\PageController;
 use App\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\IndexController::class, 'index'])->name('index');
+Route::get('/', [PageController::class, 'index'])->name('pages.index');
 
 Route::post('/link/set', [LinkController::class, 'set'])
     ->name('form.set-link');
@@ -24,13 +25,9 @@ Route::post('/link/set', [LinkController::class, 'set'])
 require __DIR__.'/auth.php';
 
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('pages.dashboard');
-
-    Route::get('/user', function () {
-        return view('user');
-    })->name('pages.user');
+    Route::get('/dashboard', [PageController::class, 'dashboard'])->name('pages.dashboard');
+    Route::get('/user', [PageController::class, 'user'])->name('pages.user');
+    Route::get('/links',  [PageController::class, 'links'])->name('pages.links');
 });
 
 // должно быть последним

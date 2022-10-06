@@ -2,7 +2,7 @@
     <div class="header__inner">
         <div class="header__wrapper">
             <div class="header__logo">
-                <a href="{{ route('index') }}" class="h2 header__h2">Shorter</a>
+                <a href="{{ route('pages.index') }}" class="h2 header__h2">Shorter</a>
             </div>
         </div>
         <div class="header__content">

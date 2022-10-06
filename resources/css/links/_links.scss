@@ -1,0 +1,24 @@
+.links {
+    font-size: 14px;
+    &__table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    &__th, &__td {
+        border: 1px solid $grey;
+        padding: 8px;
+    }
+
+    &__th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: $dark;
+        color: white;
+    }
+
+    &__tr:nth-child(even) {
+        background-color: $light-grey;
+    }
+}

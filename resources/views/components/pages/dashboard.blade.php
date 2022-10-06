@@ -3,7 +3,7 @@
     <div class="dashboard__menu">
         <ul class="dashboard__list">
             <li class="dashboard__list-item">
-                <a href="#">Созданные ссылки</a>
+                <a href="{{ route('pages.links') }}">Созданные ссылки</a>
             </li>
             <li class="dashboard__list-item">
                 <a href="#">Статистика переходов</a>
