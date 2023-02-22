@@ -14,7 +14,7 @@ class LinkController extends Controller
      */
     public function __construct(private readonly LinkStorage $linkStorage) {}
 
-    public function set(LinkSetRequest $request)
+    public function set(LinkSetRequest $request): \Illuminate\Http\RedirectResponse
     {
         $result = $this->linkStorage->save(
             new Structures\Link(
