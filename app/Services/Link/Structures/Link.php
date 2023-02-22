@@ -11,9 +11,10 @@ class Link
 
     public function __construct(private readonly string $token,
                                 private readonly string $link,
-                                private readonly ?string $ip = null)
+                                private readonly ?string $ip = null,
+                                private readonly ?string $customName = null)
     {
-        $this->hash = md5($this->link);
+        $this->hash = md5($this->link . $customName);
     }
 
     /**

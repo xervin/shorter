@@ -18,13 +18,14 @@ class LinkController extends Controller
     {
         $result = $this->linkStorage->save(
             new Structures\Link(
-                TokenGenerator::generate(),
+                $request->validated()['custom-name'] ?? TokenGenerator::generate(),
                 $request->validated()['link'],
-                $request->ip()
+                $request->ip(),
+                $request->validated()['custom-name']
             )
         );
 
-        return redirect()->route('index',[
+        return redirect()->route('pages.index',[
             'link' => $result->link(),
         ]);
     }
