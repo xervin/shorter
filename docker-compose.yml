@@ -80,6 +80,14 @@ services:
     networks:
       - short_net
 
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - 1025:1025 # smtp server
+      - 8025:8025 # web ui
+    networks:
+      - short_net
+
 networks:
   short_net:
     driver: bridge
