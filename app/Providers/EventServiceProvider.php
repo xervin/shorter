@@ -4,11 +4,9 @@ namespace App\Providers;
 
 use App\Events\LinkAdded;
 use App\Listeners\AddLinkToUser;
-use App\Notifications\VerifyEmail;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\Event;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -20,7 +18,6 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         Registered::class => [
             SendEmailVerificationNotification::class,
-            VerifyEmail::class
         ],
         LinkAdded::class => [
             AddLinkToUser::class
