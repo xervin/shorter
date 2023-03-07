@@ -29,8 +29,8 @@ class PageController extends Controller
     public function links(Request $request)
     {
         return view('links', [
-//            'links' => User::find(Auth::id())->links()->paginate()
-            'links' => Link::where('id', '>' ,'1')->paginate()
+            'links' => User::find(Auth::id())->links()->paginate()
+//            'links' => Link::where('id', '>' ,'1')->paginate()
         ]);
     }
 }
