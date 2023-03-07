@@ -13,16 +13,15 @@
 {{-- Intro Lines --}}
 @foreach ($introLines as $line)
 {{ $line }}
-
 @endforeach
 
 {{-- Action Button --}}
 @isset($actionText)
 <?php
-    $color = match ($level) {
-        'success', 'error' => $level,
-        default => 'primary',
-    };
+$color = match ($level) {
+'success', 'error' => $level,
+default => 'primary',
+};
 ?>
 @component('mail::button', ['url' => $actionUrl, 'color' => $color])
 {{ $actionText }}
@@ -32,27 +31,18 @@
 {{-- Outro Lines --}}
 @foreach ($outroLines as $line)
 {{ $line }}
-
 @endforeach
 
 {{-- Salutation --}}
 @if (! empty($salutation))
 {{ $salutation }}
 @else
-@lang('Regards'),<br>
-{{ config('app.name') }}
+*С уважением, команда __"{{ config('app.name') }}\"__*
 @endif
 
 {{-- Subcopy --}}
 @isset($actionText)
-@slot('subcopy')
-@lang(
-    "If you're having trouble clicking the \":actionText\" button, copy and paste the URL below\n".
-    'into your web browser:',
-    [
-        'actionText' => $actionText,
-    ]
-) <span class="break-all">[{{ $displayableActionUrl }}]({{ $actionUrl }})</span>
-@endslot
+Если у вас возникли проблемы при нажатии на кнопку \"{{ $actionText }}\", то скопируйте данный текст в строку браузера<br>
+<span class="break-all">[{{ $displayableActionUrl }}]({{ $actionUrl }})</span>
 @endisset
 @endcomponent
