@@ -28,7 +28,7 @@ class LinkSetRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'link' => 'required|url|active_url|max:2048',
+            'link' => 'required|url|max:2048',
             'custom-name' => 'nullable|unique:' . Link::class . ',token|max:16|' . 'not_in:' . implode(',', ReservedRoutes::get()),
         ];
     }
