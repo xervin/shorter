@@ -1,46 +1,42 @@
 <div class="links">
     <div class="links__container">
-        <table class="links__table">
-            <thead>
-            <tr class="links__tr">
-                <th class="links__th">
+        <div class="links__table">
+            <div class="links__tr">
+                <div class="links__td links__th">
                     Токен
-                </th>
-                <th class="links__th">
+                </div>
+                <div class="links__td links__th">
                     Ссылка
-                </th>
-                <th class="links__th">
+                </div>
+                <div class="links__td links__th">
                     ip
-                </th>
-                <th class="links__th">
+                </div>
+                <div class="links__td links__th">
                     Создана
-                </th>
-            </tr>
-            </thead>
-            <tbody>
+                </div>
+            </div>
             @forelse($links as $link)
-                <tr class="links__tr">
-                    <td class="links__td">
+                <div class="links__tr">
+                    <div class="links__td">
                         {{ $link->token }}
-                    </td>
-                    <td class="links__td">
-                        {{ $link->link }}
-                    </td>
-                    <td class="links__td">
+                    </div>
+                    <div class="links__td">
+                        <a class="links__a" href="{{ $link->link }}">{{ env('APP_URL') }}/{{ $link->link }}</a>
+                    </div>
+                    <div class="links__td">
                         {{ $link->ip }}
-                    </td>
-                    <td class="links__td">
+                    </div>
+                    <div class="links__td">
                         {{ $link->created_at }}
-                    </td>
-                </tr>
+                    </div>
+                </div>
             @empty
-                <tr class="links__tr">
-                    <td colspan="4" class="links__td">
+                <div class="links__tr">
+                    <div colspan="4" class="links__td">
                         No links
-                    </td>
-                </tr>
+                    </div>
+                </div>
             @endforelse
-            </tbody>
-        </table>
+        </div>
     </div>
 </div>

@@ -1,13 +1,30 @@
 .links {
     font-size: 14px;
     &__table {
+        display: table;
         width: 100%;
-        border-collapse: collapse;
+        overflow-x: scroll;
     }
 
     &__th, &__td {
+        display: table-cell;
         border: 1px solid $grey;
         padding: 8px;
+    }
+
+    &__td {
+        &:nth-child(1) {
+            width: 10%;
+        }
+        &:nth-child(2) {
+            width: 60%;
+        }
+        &:nth-child(3) {
+            width: 15%;
+        }
+        &:nth-child(4) {
+            width: 15%;
+        }
     }
 
     &__th {
@@ -18,7 +35,15 @@
         color: white;
     }
 
-    &__tr:nth-child(even) {
-        background-color: $light-grey;
+    &__tr {
+        width: 100%;
+        display: table-row;
+        &:nth-child(even) {
+            background-color: $light-grey;
+        }
+    }
+
+    &__a {
+        word-break: break-all;
     }
 }

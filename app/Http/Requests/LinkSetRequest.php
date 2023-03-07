@@ -2,9 +2,11 @@
 
 namespace App\Http\Requests;
 
+use App\Helpers\ReservedRoutes;
 use App\Helpers\Url;
 use App\Models\Link;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class LinkSetRequest extends FormRequest
 {
@@ -27,7 +29,7 @@ class LinkSetRequest extends FormRequest
     {
         return [
             'link' => 'required|url|active_url|max:2048',
-            'custom-name' => 'nullable|unique:' . Link::class . ',token|max:16'
+            'custom-name' => 'nullable|unique:' . Link::class . ',token|max:16|' . 'not_in:' . implode(',', ReservedRoutes::get()),
         ];
     }
 
@@ -61,6 +63,7 @@ class LinkSetRequest extends FormRequest
             'link.max' => 'Длина ссылки не должна превышать 2048 символов',
             'custom-name.unique' => 'Такое короткое имя уже существует. Придумайте другое.',
             'custom-name.max' => 'Длина короткого имени не должна превышать 16 символов',
+            'custom-name.not_in' => 'Это зарезервированное имя. Придумайте другое.',
         ];
     }
 }
