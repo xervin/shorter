@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\LinkSetRequest;
 use App\Services\Link\LinkStorage;
+use App\Services\Link\RedirectStorage;
 use App\Services\Link\Structures;
 use App\Services\TokenGenerator;
 
@@ -35,6 +36,7 @@ class LinkController extends Controller
         $result = $this->linkStorage->get($token);
 
         if ($result->success()) {
+            RedirectStorage::add($token);
             return redirect()->to($result->link());
         }
 
