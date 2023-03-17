@@ -9,7 +9,7 @@
                 <a href="{{ route('pages.links') }}">Созданные ссылки</a>
             </li>
             <li class="dashboard__list-item">
-                <a href="#">Статистика переходов</a>
+                <a href="{{ route('pages.stats') }}">Статистика переходов</a>
             </li>
             <li class="dashboard__list-item">
                 <a href="{{ route('pages.user') }}">О себе</a>

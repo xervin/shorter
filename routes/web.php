@@ -28,6 +28,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [PageController::class, 'dashboard'])->name('pages.dashboard');
     Route::get('/user', [PageController::class, 'user'])->name('pages.user');
     Route::get('/links',  [PageController::class, 'links'])->name('pages.links');
+    Route::get('/stats',  [PageController::class, 'stats'])->name('pages.stats');
 });
 
 // должно быть последним
